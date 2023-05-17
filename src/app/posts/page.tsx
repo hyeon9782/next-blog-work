@@ -1,13 +1,16 @@
+
+
+import CategoryNav from '@/components/posts/CategoryNav';
 import PostsCard from '@/components/posts/PostsCard';
+import PostsList from '@/components/posts/PostsList';
 import { getPosts } from '@/service/posts';
-import React from 'react'
 
 export default async function PostsPage() {
+
   const posts = await getPosts();
+  const categories = [...new Set(posts.map(post => post.category))]
 
   return (
-    <div className='flex flex-wrap'>
-      {posts.map(post => <PostsCard key={post.path} post={post} width="300"/>)}
-    </div>
+    <PostsList posts={posts} categories={categories} />
   )
 }

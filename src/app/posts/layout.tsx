@@ -14,9 +14,8 @@ export default function PostsLayout({
   children: React.ReactNode
 }) {
   return (
-    <div className='flex'>
+    <div>
         <section>{children}</section>
-        <CategoryNav />
     </div>
   )
 }

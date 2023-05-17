@@ -9,7 +9,7 @@ export default function PostsCard({ post, width }: Posts) {
   const router = useRouter();
 
   return (
-    <div className={'m-5 shadow-lg'} onClick={() => router.push(`/posts/${1}`)}>
+    <div className={'m-5 shadow-lg'} onClick={() => router.push(`/posts/${post.path}`)}>
       <div className=''>
           <Image 
             src={`/images/posts/${post.path}.png`} 
