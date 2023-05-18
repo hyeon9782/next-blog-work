@@ -1,3 +1,4 @@
+import ContactForm from '@/components/contact/ContactForm'
 import Link from 'next/link'
 import React from 'react'
 
@@ -14,25 +15,7 @@ export default function ContactPage() {
         <Link href="https://velog.io/@hyeon9782" className='p-2'><FaBloggerB /></Link>
       </div>
       <div className='text-4xl font-bold p-5'>Or Send me an email</div>
-      <div className='flex justify-center'>
-        <div className='w-96 bg-black text-white'>
-          <div className='p-5 w-full'>
-            <div className='text-start pb-2'>Your Email</div>
-            <input type="text" className='w-full'/>
-          </div>
-          <div className='px-5 pb-5'>
-            <div className='text-start pb-2'>Subject</div>
-            <input type="text" className='w-full'/>
-          </div>
-          <div className='px-5 pb-5'>
-            <div className='text-start pb-2'>Message</div>
-            <textarea className='w-full h-80' />
-          </div>
-          <div className='px-5 pb-5'>
-            <button className='w-full bg-amber-400 text-black'>Submit</button>
-          </div>
-        </div>
-      </div>
+      <ContactForm />
     </div>
   )
 }

@@ -1,16 +1,26 @@
 import Profile from '@/components/about/Profile'
 import FeaturedPosts from '@/components/posts/FeaturedPosts'
 import LikePosts from '@/components/posts/LikePosts'
+import PostsGrid from '@/components/posts/PostsGrid'
+import { getPosts } from '@/service/posts'
 import Image from 'next/image'
 
-export default function Home() {
+export default async function Home() {
+
+  const posts = await getPosts()
+
+  const featuredPosts = posts.filter(post => post.featured === true)
+  
   return (
     <div>
       <div className='flex justify-center'>
         <Profile />
       </div>
       <div>
-        <FeaturedPosts />
+        <div className='text-3xl font-bold p-5'>
+          Featured Posts
+        </div>
+        <PostsGrid posts={featuredPosts} />
       </div>
       <div>
         <LikePosts />

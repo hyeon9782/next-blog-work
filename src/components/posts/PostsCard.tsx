@@ -2,9 +2,13 @@
 import { Posts } from '@/service/posts'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation';
-import React from 'react'
 
-export default function PostsCard({ post, width }: Posts) {
+type Props = {
+  post : Posts;
+  width : string;
+}
+
+export default function PostsCard({ post, width }: Props) {
 
   const router = useRouter();
 

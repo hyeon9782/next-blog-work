@@ -1,7 +1,8 @@
-import { getPostsWithFeatured } from '@/service/posts';
+
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import PostsCard from './PostsCard';
+import { getPosts } from "@/service/posts";
 
 export default async function LikePosts() {
   const responsive = {
@@ -21,12 +22,12 @@ export default async function LikePosts() {
     slidesToSlide: 1 // optional, default to 1.
   }
 };
-  const posts = await getPostsWithFeatured(false);
+  const posts = await getPosts();
   return (
     <div>
       <div className='p-5 font-bold text-3xl'>You may like</div>
       <div className='flex'>
-        {posts && posts.map((post, index) => <PostsCard key={index} post={post}/>)}
+        {posts && posts.map((post, index) => <PostsCard key={index} post={post} width="300"/>)}
       </div>
       
     </div>

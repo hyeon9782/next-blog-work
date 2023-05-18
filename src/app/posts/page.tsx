@@ -1,8 +1,6 @@
 
 
-import CategoryNav from '@/components/posts/CategoryNav';
-import PostsCard from '@/components/posts/PostsCard';
-import PostsList from '@/components/posts/PostsList';
+import FilteringPosts from '@/components/posts/FilteringPosts';
 import { getPosts } from '@/service/posts';
 
 export default async function PostsPage() {
@@ -11,6 +9,6 @@ export default async function PostsPage() {
   const categories = [...new Set(posts.map(post => post.category))]
 
   return (
-    <PostsList posts={posts} categories={categories} />
+    <FilteringPosts posts={posts} categories={categories} />
   )
 }
