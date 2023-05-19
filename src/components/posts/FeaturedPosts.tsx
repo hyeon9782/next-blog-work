@@ -1,13 +1,14 @@
-import { Posts } from '@/service/posts'
+import { getPosts } from '@/service/posts'
 import React from 'react'
-import PostsCard from './PostsCard'
-type Props = {
-    posts: Posts
-}
-export default function FeaturedPosts({ posts }: Props) {
+import PostsGrid from './PostsGrid'
+
+export default async function FeaturedPosts() {
+    const posts = await getPosts()
+    const featuredPosts = posts.filter(post => post.featured === true)
   return (
     <section className='my-4'>
-        {posts.map(post => <PostsCard post={post} key={post.path} width='300'/>)}
+        <h2 className='text-2xl font-bold my-2'>Featured Posts</h2>
+        <PostsGrid posts={featuredPosts}/>
     </section>
   )
 }

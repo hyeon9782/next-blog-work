@@ -7,8 +7,14 @@ type Props = {
 
 export default function PostsGrid({ posts }: Props) {
   return (
-    <div className='flex flex-wrap'>
-      {posts.map(post => <PostsCard key={post.path} post={post} width='450'/>)}
-    </div>
+    <ul className='grid gap-4 grid-cols sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
+      {
+        posts.map(post => (
+          <li key={post.path}>
+            <PostsCard post={post} />
+          </li>
+        ))
+      }
+    </ul>
   )
 }

@@ -5,29 +5,27 @@ import { useRouter } from 'next/navigation';
 
 type Props = {
   post : Posts;
-  width : string;
 }
 
-export default function PostsCard({ post, width }: Props) {
+export default function PostsCard({ post }: Props) {
 
   const router = useRouter();
 
   return (
-    <div className={'m-5 shadow-lg'} onClick={() => router.push(`/posts/${post.path}`)}>
-      <div className=''>
-          <Image 
-            src={`/images/posts/${post.path}.png`} 
-            alt="이미지"
-            width={width === "450" ? 450 : 400}
-            height={300}
-          />
+    <article className='m-5 shadow-lg rounded-md' onClick={() => router.push(`/posts/${post.path}`)}>
+      <Image
+        className='w-full' 
+        src={`/images/posts/${post.path}.png`} 
+        alt="이미지"
+        width={300}
+        height={200}
+      />
+      <div className='flex flex-col items-center p-4'>
+          <time className='self-end'>{post.date.toString()}</time>
+          <div className='text-lg font-bold'>{post.title}</div>
+          <p className='w-full truncate text-center'>{post.description}</p>
+          <span className='text-sm rounded-lg bg-green-100 px-2 my-2'>{post.category}</span>
       </div>
-      <div className='p-5 text-center'>
-          <div className='text-end'>{post.date}</div>
-          <div>{post.title}</div>
-          <div>{post.description}</div>
-          <div>{post.category}</div>
-      </div>
-    </div>
+    </article>
   )
 }
