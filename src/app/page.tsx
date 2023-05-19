@@ -1,4 +1,5 @@
 import Profile from '@/components/about/Profile'
+import CarouselPosts from '@/components/posts/CarouselPosts'
 import FeaturedPosts from '@/components/posts/FeaturedPosts'
 import LikePosts from '@/components/posts/LikePosts'
 import PostsGrid from '@/components/posts/PostsGrid'
@@ -16,15 +17,8 @@ export default async function Home() {
       <div className='flex justify-center'>
         <Profile />
       </div>
-      <div>
-        <div className='text-3xl font-bold p-5'>
-          Featured Posts
-        </div>
-        <PostsGrid posts={featuredPosts} />
-      </div>
-      <div>
-        <LikePosts />
-      </div>
+      <FeaturedPosts posts={featuredPosts}/>
+      <CarouselPosts />
     </div>
   )
 }

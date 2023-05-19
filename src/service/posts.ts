@@ -17,7 +17,6 @@ export async function getPosts(): Promise<Posts[]> {
     return readFile(filePath, 'utf-8')
         .then<Posts[]>(JSON.parse)
         .then(posts => posts.sort((a, b) => (a.date > b.date ? -1 : 1)))
-
 }
 
 export async function getPostData(fileName: string): Promise<PostData> {
