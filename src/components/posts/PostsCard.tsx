@@ -12,7 +12,7 @@ export default function PostsCard({ post }: Props) {
   const router = useRouter();
 
   return (
-    <article className='m-5 shadow-lg rounded-md' onClick={() => router.push(`/posts/${post.path}`)}>
+    <article className='shadow-lg rounded-md' onClick={() => router.push(`/posts/${post.path}`)}>
       <Image
         className='w-full' 
         src={`/images/posts/${post.path}.png`} 

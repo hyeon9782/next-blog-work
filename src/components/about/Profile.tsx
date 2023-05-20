@@ -1,20 +1,24 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import image from '../../../public/images/profile.png'
+import profileImage from '../../../public/images/profile.png'
 
 export default function Profile() {
   return (
-    <div className='w-64'>
-        <div className='rounded-full h-60 w-60 bg-black'>
-            <Image src={image} alt="이미지" />
-        </div>
-        <div className='text-24'>Hi, I`m Jeongho</div>
-        <div>Front-end developer</div>
+    <section className='text-center'>
+        <Image
+          className='rounded-full mx-auto'
+          src={profileImage} 
+          alt="Picture of the author" 
+          width={250} 
+          height={250}
+        />
+        <h2 className='text-3xl font-bold mt-2'>Hi, I`m Jeongho</h2>
+        <h3 className='text-xl font-semibold'>Front-end developer</h3>
         <p>성장하는 개발자 현정호입니다.</p>
-        <div className='flex justify-center bg-amber-400 rounded-2xl w-36'>
-            <Link href="/contact">Contact Me</Link>
-        </div>
-    </div>
+        <Link href="/contact">
+          <button className='bg-yellow-500 font-bold rounded-xl py-1 px-4 mt-2'>Contact Me</button>  
+        </Link>    
+    </section>
   )
 }

@@ -2,14 +2,12 @@ import Profile from '@/components/about/Profile'
 import CarouselPosts from '@/components/posts/CarouselPosts'
 import FeaturedPosts from '@/components/posts/FeaturedPosts'
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div>
-      <div className='flex justify-center'>
-        <Profile />
-      </div>
+    <section>
+      <Profile />
       <FeaturedPosts />
       <CarouselPosts />
-    </div>
+    </section>
   )
 }
