@@ -1,6 +1,11 @@
 import Profile from '@/components/about/Profile'
 import React from 'react'
 
+export const metadata = {
+  title: 'About Me',
+  description: '정호의 커리어 소개'
+}
+
 export default function AboutPage() {
   return (
     <div>

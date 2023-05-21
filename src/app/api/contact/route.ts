@@ -11,7 +11,7 @@ export async function POST(req: Request) {
 
   const body = await req.json();
 
-  if (bodySchema.isValidSync(body)){
+  if (!bodySchema.isValidSync(body)){
     return new Response(JSON.stringify({ message: '메일 전송에 실패함!'}), { status : 400 })
   }
 

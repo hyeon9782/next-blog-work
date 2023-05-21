@@ -6,6 +6,9 @@ export type EmailData = {
     message: string;
 }
 
+console.log(process.env.AUTH_USER);
+
+
 const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
     port: 465,

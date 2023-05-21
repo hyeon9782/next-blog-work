@@ -5,6 +5,11 @@ import React from 'react'
 import { BsGithub } from 'react-icons/bs'
 import { FaBloggerB } from 'react-icons/fa'
 
+export const metadata = {
+  title: 'Contact Me',
+  description: '정호에게 메일 보내기'
+}
+
 export default function ContactPage() {
   return (
     <div className='text-center'>
