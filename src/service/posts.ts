@@ -1,5 +1,6 @@
 import path from 'path';
 import { readFile } from 'fs/promises'
+import { cache } from 'react';
 
 export type Posts = {
     title: string,
@@ -12,12 +13,14 @@ export type Posts = {
 
 export type PostData = Posts & { content: string; next: Posts | null; prev: Posts | null; };
 
-export async function getPosts(): Promise<Posts[]> {
+// 중복된 데이터 요청이 올경우 캐시된 값으로 보여준다.
+// fetch()는 이미 적용되어 있기 때문에 fetch()를 사용할 경우 캐시를 사용하지 않아도 된다.
+export const getPosts = cache( async () => {
     const filePath = path.join(process.cwd(), 'data', 'posts.json')
     return readFile(filePath, 'utf-8')
         .then<Posts[]>(JSON.parse)
         .then(posts => posts.sort((a, b) => (a.date > b.date ? -1 : 1)))
-}
+})
 
 export async function getPostData(fileName: string): Promise<PostData> {
     const filePath = path.join(process.cwd(), 'data/posts', `${fileName}.md`)
