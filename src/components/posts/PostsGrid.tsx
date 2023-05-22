@@ -2,7 +2,7 @@ import { Posts } from '@/service/posts';
 import PostsCard from './PostsCard';
 
 type Props = {
-    posts: Posts[];
+  posts: Posts[];
 }
 
 export default function PostsGrid({ posts }: Props) {

@@ -1,5 +1,3 @@
-
-
 import FilteringPosts from '@/components/posts/FilteringPosts';
 import { getPosts } from '@/service/posts';
 import { Metadata } from 'next';

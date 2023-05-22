@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { ChangeEvent, FormEvent, useState } from 'react'
 import Banner, { BannerData } from './Banner';
 import { sendContactEmail } from '@/service/contact';
 

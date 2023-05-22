@@ -6,7 +6,9 @@ export default function HomePage() {
   return (
     <section>
       <Profile />
+      {/* @ts-expect-error Async Server Component */}
       <FeaturedPosts />
+      {/* @ts-expect-error Async Server Component */}
       <CarouselPosts />
     </section>
   )
